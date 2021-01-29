@@ -1,0 +1,11 @@
+<h1>Welcome to the blog</h1>
+
+<h4>Jude have written {{ posts.count }} blog{{ posts.count|pluralize}}</h4>
+{% if posts %}
+{% for post in posts %}
+   <h1>{{ post.title }}</h1>
+   <p>{{ post.content|safe|truncatechars:10 }}</p>
+   <h1>{{ post.date|date:'D Y'|upper }}</h1>
+
+{% endfor %}
+{% endif %}
